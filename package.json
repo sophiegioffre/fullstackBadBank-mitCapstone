@@ -1,12 +1,12 @@
 {
-  "name": "littledb",
+  "name": "BadBank",
   "version": "1.0.0",
-  "description": "lowdb sample for 1.125",
+  "description": "banking simulator",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "abel@mit.edu",
+  "author": "sophie",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
