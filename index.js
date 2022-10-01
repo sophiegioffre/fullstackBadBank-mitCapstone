@@ -45,7 +45,7 @@ app.get('/account/login/:email/:password', function (req, res) {
                     res.send(user[0]);
                 }
                 else{
-                    res.send('Login failed: wrong password');
+                    res.send('Login failed: wrong username or password');
                 }
             }
             else{
