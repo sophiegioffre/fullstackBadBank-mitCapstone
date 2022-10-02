@@ -98,7 +98,7 @@ function CreateForm(props){
         var createAccountMessage = `Account Created For: ${email}`;
         console.log(createAccountMessage);
 
-        const url = `/account/create/${name}/${email}/${password}`;
+        const url = `/account/create/${name}/${email}/${password}/`;
         (async () => {
           var res  = await fetch(url);
           var data = await res.json();    
@@ -141,10 +141,12 @@ function CreateForm(props){
           var responseString = JSON.stringify(userData);
           console.log(`Database Response String: ${responseString}`)
           console.log(`Database Response: ${userData}`)
+          
           if (responseString == '[]') {
             // Case if user does not exist
             console.log(`User does not exist, creating account`);
             var createAccountMessage = `Account successfully created for: ${userCredential.user.email}`;
+            
             // Setting the account up in the database
             const url = `/account/create/${userCredential.user.email}/${userCredential.user.email}/GoogleAuth/${userCredential.user.uid}`;
             (async () => {
@@ -153,12 +155,11 @@ function CreateForm(props){
               var data  =  await res.json();
               console.log(data);
             })();
+            
             // Setting the status messages
             props.setStatus(createAccountMessage);
             setTimeout(() => props.setStatus(''), 4000); 
           } else {
-            // Case if user does exist
-            // Just print success message if user exists
             console.log(`User does exist`);
             console.log(`Database Response: ${responseString}`)
           }
