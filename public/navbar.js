@@ -24,9 +24,9 @@ function NavBar(){
           <li className="nav-item">
             <a className="nav-link" href="#/balance/">Balance</a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" href="#/alldata/">AllData</a>
-          </li>      
+          </li>       */}
         </ul>
       </div>
     </nav>
