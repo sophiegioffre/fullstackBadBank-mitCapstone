@@ -9,14 +9,14 @@ function CreateAccount(){
     if (userCredential) {
         setShow(false);
         // If the user is logged in...
-        console.log("Initializing...")
-        console.log("Create Account Page Current User: ")
+        console.log("Initializing...");
+        console.log("Create Account Page Current User: ");
         console.log(userCredential);
         currentUser.user = userCredential;
-        console.log(`Current Email: ${currentUser.user.email}`)
-        console.log(`Current UID: ${currentUser.user.uid}`)
-        console.log("End Initializing...")
-        setEmail(currentUser.user.email)
+        console.log(`Current Email: ${currentUser.user.email}`);
+        console.log(`Current UID: ${currentUser.user.uid}`);
+        console.log("End Initializing...");
+        setEmail(currentUser.user.email);
     } else {
         setShow(true)
         // If the user is logged out...
@@ -74,7 +74,7 @@ function CreateForm(props){
   const [disabled, setDisabled] = React.useState(true);
   const currentUser = React.useContext(UserContext);
 
-  //Determine disabled status
+  //Determine disabled button status
   if (!name || !password || !email) {
     if (disabled) {
       console.log(`Button Disabled ${disabled}`);
@@ -111,19 +111,12 @@ function CreateForm(props){
         var errorMessage = `Error Message: ${error.message}`;
         console.log(errorMessage);
         props.setStatus(errorMessage);
-        setTimeout(() => props.setStatus(''), 4000);
-        setEmail('');
-        setPassword('');
+        setTimeout(() =>{
+          props.setStatus('');
+          setEmail('');
+          setPassword('');
+        }, 4000);
       })
-
-    // console.log(name,email,password);
-    // const url = `/account/create/${name}/${email}/${password}`;
-    // (async () => {
-    //     var res  = await fetch(url);
-    //     var data = await res.json();    
-    //     console.log(data);        
-    // })();
-    // props.setShow(false);
   }
 
   //Google Login Function
@@ -133,14 +126,14 @@ function CreateForm(props){
     firebase.auth().signInWithPopup(provider)
       .then((userCredential) => {
         // Check if the user already has an account in the database by checking balance
-        const url = `/account/getbalance/${userCredential.user.uid}`;
+        const url = `/account/find/${userCredential.user.email}`;
         (async () => {
           // Sending the data to server and then awaiting the response
           var res = await fetch(url);
           var userData = await res.json();
           var responseString = JSON.stringify(userData);
-          console.log(`Database Response String: ${responseString}`)
-          console.log(`Database Response: ${userData}`)
+          console.log(`Database Response String: ${responseString}`);
+          console.log(`Database Response: ${userData}`);
           
           if (responseString == '[]') {
             // Case if user does not exist
@@ -148,7 +141,7 @@ function CreateForm(props){
             var createAccountMessage = `Account successfully created for: ${userCredential.user.email}`;
             
             // Setting the account up in the database
-            const url = `/account/create/${userCredential.user.email}/${userCredential.user.email}/GoogleAuth/${userCredential.user.uid}`;
+            const url = `/account/create/${userCredential.user.email}/${userCredential.user.email}/${userCredential.user.uid}`;
             (async () => {
               // Sending the data to server and then awaiting the response
               var res   =  await fetch(url);
@@ -161,7 +154,7 @@ function CreateForm(props){
             setTimeout(() => props.setStatus(''), 4000); 
           } else {
             console.log(`User does exist`);
-            console.log(`Database Response: ${responseString}`)
+            console.log(`Database Response: ${responseString}`);
           }
         })();
 
@@ -230,7 +223,7 @@ function CreateForm(props){
     &nbsp;
 
     <button type="submit" className="btn btn-light" onClick={loginGoogle}>
-      &nbsp; Sign in with Google
+      &nbsp; Sign Up with Google
     </button>
 
   </>);
