@@ -4,7 +4,12 @@
   "description": "banking simulator",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npm install",
+    "start": "node http_server.js"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "author": "sophie",
   "license": "MIT",
