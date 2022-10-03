@@ -218,7 +218,11 @@ function LoginForm(props){
       <button type="submit" className="btn btn-light" onClick={login}>Login</button>
     )}
 
-    &nbsp; or &nbsp;
+    <br/>
+    &nbsp; or 
+    <br/>
+    &nbsp;
+
     <button type="submit" className="btn btn-light" onClick={loginGoogle}>
       &nbsp; Login with Google
     </button>

@@ -224,7 +224,11 @@ function CreateForm(props){
       </button>
     )}
 
-    &nbsp; or &nbsp;
+    <br/>
+    &nbsp; or 
+    <br/>
+    &nbsp;
+
     <button type="submit" className="btn btn-light" onClick={loginGoogle}>
       &nbsp; Sign in with Google
     </button>
