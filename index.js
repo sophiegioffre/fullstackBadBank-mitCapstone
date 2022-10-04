@@ -6,6 +6,7 @@ const e = require('express');
 
 // used to serve static files from public directory
 app.use(express.static('public'));
+app.use('fullstackBadBankDB');
 app.use(cors());
 
 // create user account
