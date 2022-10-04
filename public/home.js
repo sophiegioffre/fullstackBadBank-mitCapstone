@@ -2,9 +2,9 @@ function Home(){
   return (
     <Card
       txtcolor="black"
-      header="BadBank Landing Module"
-      title="Welcome to the bank"
-      text="You can move around using the navigation bar."
+      header="Welcome to the Bank"
+      title=""
+      text="Create an account, login to an existing account, deposit and withdraw funds, and check your balance!"
       body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
     />
   );  
