@@ -17,9 +17,9 @@ Go to firebase.com and create a project. Once the project is created:
     Copy the code for the firebase config
     Add this code to the index.html file in the public folder in the project and save the file
 
-After adding your firebase credentials, open a terminal window and run the following command (make sure you have docker installed an running):
+After adding your firebase credentials, open a terminal window and run the following command (make sure you have docker installed and running):
 
-    'docker-compose up'
+    'docker run -p 27017:27017 --name fullstackBankingApp -d mongo'
 
 Then do the following:
 
