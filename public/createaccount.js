@@ -58,8 +58,11 @@ function CreateMsg(props){
 
   return(<>
     <h5>Success! You are logged in as {currentUser.user.email}!</h5>
-    <a href='#/deposit/'>Make a Deposit</a><br/>
-    <a href='#/withdraw/'>Make a Withdrawal</a><br/><br/>
+    <ul class="list-group">
+      <li className="list-group-item" href='#/deposit'><a href='#/deposit/' style={{color: "black"}}>Make Your First Deposit</a></li>
+      <li className="list-group-item" href='#/balance/'><a href='#/withdraw/' style={{color: "black"}}>Check Your Balance</a></li>
+    </ul>
+    <br/>
     <button type="submit" 
       className="btn btn-light" 
       onClick={logout}>Logout
