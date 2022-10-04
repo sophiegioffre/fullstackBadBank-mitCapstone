@@ -33,6 +33,19 @@ async function listDatabases(client){
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 };
  
+async function insertDoc(client){
+    insertDocToDatabase = await client.db().admin().insertDoc();
+
+    //new user
+    const name = 'user' + Math.floor(Math.random()*10000);
+    const email = name + '@mit.edu';
+
+    //insert into customer table
+    const collection = client.db('fullstackBadBankDB').collection('customers');
+ 
+    console.log("Databases:");
+    insertDocToDatabase.databases.forEach(db => console.log(` - ${db.name}`));
+};
 
 
 
