@@ -1,2 +1,1 @@
-web: bundle exec rails server -p $PORT
-start: "node index.js"
+web: node index.js
