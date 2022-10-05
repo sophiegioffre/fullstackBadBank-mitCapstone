@@ -8,6 +8,9 @@
     "build": "npm install",
     "start": "node index.js"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "author": "sophie",
   "license": "MIT",
   "dependencies": {
