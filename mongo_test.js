@@ -1,12 +1,8 @@
 const MongoClient = require('mongodb').MongoClient;
 //const url = 'mongodb://localhost:27017';
 //const uri = "mongodb+srv://sophiegioff:89Piggish@bankingappcluster.wrutvnw.mongodb.net/?retryWrites=true&w=majority";
-<<<<<<< HEAD
 const uri = process.env.MONGODB_URI  || 'mongodb://localhost:27017';
  
-=======
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
->>>>>>> 28323bddaaa8d0b5e4ae0a1399cfd71014bea79e
 // connect to mongo
 MongoClient.connect(uri, {useUnifiedTopology: true}, function(err, client) {
   console.log("Connected successfully to server");
