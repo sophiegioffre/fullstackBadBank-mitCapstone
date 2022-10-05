@@ -2,11 +2,11 @@
   "name": "badbank",
   "version": "1.0.0",
   "description": "banking simulator",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "npm install",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "sophie",
   "license": "MIT",
